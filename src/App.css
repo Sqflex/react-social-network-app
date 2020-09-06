@@ -11,21 +11,12 @@
   margin: auto;
 }
 
-.header{
-grid-area: h;
-background-color: green;
+a{
+  text-decoration: none;
+  color: white;
 }
 
-.header img{
-  width: 80px;
-}
-
-.navigation{
-  grid-area: n;
-  background-color: red;
-}
-
-.content{
-  grid-area: c;
-  background-color: blue;
+ul{
+  list-style-type: none;
+  margin: 30px auto;
 }
