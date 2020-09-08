@@ -6,11 +6,11 @@ const Navbar = () =>{
         <aside className={styles.navigation}>
             <nav>
             <ul className={styles.nav}>
-                <li ><a href="##" classname={styles.nav__item}>Profile</a></li>
-                <li classname="nav__item"><a href="##">Messages</a></li>
-                <li classname="nav__item"><a href="##">News</a></li>
-                <li classname="nav__item"><a href="##">Music</a></li>
-                <li classname="nav__item"><a href="##">Settings</a></li>
+                <li classname="nav__item"><a href="/profile" classname={styles.nav__item}>Profile</a></li>
+                <li classname="nav__item"><a href="/dialogs">Messages</a></li>
+                <li classname="nav__item"><a href="/news">News</a></li>
+                <li classname="nav__item"><a href="/music">Music</a></li>
+                <li classname="nav__item"><a href="/settings">Settings</a></li>
             </ul>
             </nav>
         </aside>
