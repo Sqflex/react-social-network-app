@@ -1,0 +1,9 @@
+.content{
+    grid-area: c;
+    background-color: blue;
+  }
+
+.content h2{
+    color: white;
+    padding: 0px;
+}
