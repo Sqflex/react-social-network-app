@@ -4,7 +4,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
     return (
-        <section className={s.content}>
+        <section>
         <div className="profile-background">
           <img src="https://sun9-15.userapi.com/0isHeMubDs_eDAB28yFIjEEcjT9t_E1Hr8whtQ/Z3TH8GDs2QM.jpg"></img>
         </div>

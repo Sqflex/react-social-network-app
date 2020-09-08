@@ -7,6 +7,7 @@ const Post = (props) => {
             <img src="https://sun9-30.userapi.com/c639724/v639724018/5406b/mqjbhHdkiN8.jpg"></img>
             {props.message}
             <div>
+            {props.likenumber}
             <span>Like</span>
             </div>
             
