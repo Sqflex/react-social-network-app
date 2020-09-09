@@ -1,9 +1,34 @@
-.content{
+.dialogs{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogs_logo{
     grid-area: c;
     background-color: blue;
   }
 
-.content h2{
+.dialogs_logo h2{
     color: white;
-    padding: 0px;
+    padding-left: 30px;
+}
+
+.dialogs_items{
+  padding: 10px;
+}
+
+.dialogs_items .activeDialog{
+  color: gold;
+}
+
+.dialog{
+
+}
+
+.messages{
+  padding: 10px;
+}
+
+.message{
+
 }
