@@ -1,6 +1,7 @@
 .navigation{
     grid-area: n;
     background-color: red;
+    padding: 15px;
   }
 
 .nav{
@@ -8,6 +9,11 @@
   margin: 1px;
 }
 
-.nav > ul > li{
-  color: black;
+li a{
+  color: white;
+  text-decoration: none;
+}
+
+li a.active{
+  color: gold;
 }

@@ -1,16 +1,18 @@
 import React from 'react';
 import styles from './Navbar.module.css';
-
+import { NavLink } from 'react-router-dom';
+// History API html5
+// Prevent default
 const Navbar = () =>{
     return (
         <aside className={styles.navigation}>
             <nav>
             <ul className={styles.nav}>
-                <li classname="nav__item"><a href="/profile" classname={styles.nav__item}>Profile</a></li>
-                <li classname="nav__item"><a href="/dialogs">Messages</a></li>
-                <li classname="nav__item"><a href="/news">News</a></li>
-                <li classname="nav__item"><a href="/music">Music</a></li>
-                <li classname="nav__item"><a href="/settings">Settings</a></li>
+                <li><NavLink to="/profile" activeClassName={styles.active}>Profile</NavLink></li>
+                <li><NavLink to="/dialogs" activeClassName={styles.active}>Messages</NavLink></li>
+                <li><NavLink to="/news" activeClassName={styles.active}>News</NavLink></li>
+                <li><NavLink to="/music" activeClassName={styles.active}>Music</NavLink></li>
+                <li><NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink></li>
             </ul>
             </nav>
         </aside>
