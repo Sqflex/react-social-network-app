@@ -17,12 +17,11 @@
   padding: 10px;
 }
 
-.dialogs_items .activeDialog{
+.dialog .activeDialog{
   color: gold;
 }
 
-.dialog{
-
+.dialog a{
 }
 
 .messages{

@@ -1,5 +1,18 @@
 import React from 'react';
 import style from './Dialogs.module.css';
+import { NavLink } from 'react-router-dom';
+
+const DialogItem = (props) =>{
+    return (
+    <div className={style.dialog + ' ' + style.activeDialog}><NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink></div>
+    )
+}
+
+const Message = (props) =>{
+    return(
+    <div className={style.message}>{props.message}</div>
+    )
+}
 
 const Dialogs = (props) => {
     return (
@@ -8,15 +21,15 @@ const Dialogs = (props) => {
             <div className={style.dialogs_logo}>
                 <h2>Dialogs</h2>
             </div>
-                <div className={style.dialog + ' ' + style.activeDialog}>Vlad</div>
-                <div className={style.dialog}>Vadim</div>
-                <div className={style.dialog}>Evgen</div>
-                <div className={style.dialog}>Valentin</div>
+                <DialogItem name="Vlad" id="1" />
+                <DialogItem name="Vadim" id="2" />
+                <DialogItem name="Evgen" id="3" />
+                <DialogItem name="Valentin" id="4" />
             </div>
             <div className={style.messages}>
-               <div className={style.message}>Hi</div>
-               <div className={style.message}>How are u?</div>
-               <div className={style.message}>Fine, thx. u?</div> 
+               <Message message="hi" />
+               <Message message="How are u?" />
+               <Message message="Hey, im fine, u?" /> 
             </div>
         </section>
 

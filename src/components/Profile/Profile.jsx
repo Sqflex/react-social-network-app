@@ -1,21 +1,12 @@
 import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
-        <section>
-        <div className="profile-background">
-          <img src="https://sun9-15.userapi.com/0isHeMubDs_eDAB28yFIjEEcjT9t_E1Hr8whtQ/Z3TH8GDs2QM.jpg"></img>
-        </div>
-        <div className="avatar-describtion">
-          Avatar + Describtion
-        </div>
-        <div className="add-post">
-          <div className="post">
-              Add Post
-          </div>
-        </div>
+        <section className>
+        <ProfileInfo />
         <MyPosts />
       </section>
     )
