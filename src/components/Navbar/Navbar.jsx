@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import Friend from './friends/Friend';
 // History API html5
 // Prevent default
-const Navbar = () =>{
+const Navbar = (props) =>{
+    let friendsElement = props.friends.map (friend => <Friend name={Friend.name} img={Friend.img} />)
     return (
         <aside className={styles.navigation}>
             <nav>
@@ -15,6 +17,7 @@ const Navbar = () =>{
                 <li><NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink></li>
             </ul>
             </nav>
+            {friendsElement}
         </aside>
     )
 }

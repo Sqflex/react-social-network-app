@@ -8,13 +8,14 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { Route, BrowserRouter } from 'react-router-dom';
+import state from './Redux/state';
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar friends={props.state.friends}/>
         {/* <Profile /> */}
         <div className="app-wrapper-content">
           <Route path="/news" component={News} />

@@ -7,6 +7,7 @@
 .nav{
   width: 100px;
   margin: 1px;
+  margin-bottom: 25px;
 }
 
 li a{
@@ -17,3 +18,4 @@ li a{
 li a.active{
   color: gold;
 }
+
