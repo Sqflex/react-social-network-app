@@ -19,3 +19,10 @@ li a.active{
   color: gold;
 }
 
+.friends {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+

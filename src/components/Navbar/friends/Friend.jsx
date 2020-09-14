@@ -5,21 +5,10 @@ import { NavLink } from 'react-router-dom';
 // Prevent default
 const Friend = (props) =>{
     return (
-            
-            <div className={styles.friends}>
                 <div className={styles.friend}>
-                    <img src="https://sun2.beltelecom-by-minsk.userapi.com/impg/S7ilepgCBL1lZlJ30X9C9qfWY4yOaNVkoqRrSw/g5BJIlyzCf4.jpg?size=100x0&quality=88&crop=0,112,519,519&sign=195b15e558f18e44770d02c281f9f1e1&ava=1"></img>
-                    <p>Misha</p>
+                <img src={props.URLimg} alt='Friend pic'></img>
+                    <p>{props.friendName}</p>
                 </div>
-                <div className={styles.friend}>
-                    <img src="https://sun2.beltelecom-by-minsk.userapi.com/impg/S7ilepgCBL1lZlJ30X9C9qfWY4yOaNVkoqRrSw/g5BJIlyzCf4.jpg?size=100x0&quality=88&crop=0,112,519,519&sign=195b15e558f18e44770d02c281f9f1e1&ava=1"></img>
-                    <p>Misha</p>
-                </div>
-                <div className={styles.friend}>
-                    <img src="https://sun2.beltelecom-by-minsk.userapi.com/impg/S7ilepgCBL1lZlJ30X9C9qfWY4yOaNVkoqRrSw/g5BJIlyzCf4.jpg?size=100x0&quality=88&crop=0,112,519,519&sign=195b15e558f18e44770d02c281f9f1e1&ava=1"></img>
-                    <p>Misha</p>
-                </div>
-            </div>
     )
 }
 
