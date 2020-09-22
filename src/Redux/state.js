@@ -1,3 +1,6 @@
+const addPost = 'ADD-POST'
+const updateNewPostText = 'UPDATE-NEW-POST-TEXT'
+
 let store ={
     _state: {
         profile :{
@@ -63,6 +66,16 @@ let store ={
     }
     
 }
+
+export const addPostActionCreater = () =>{
+    return{
+      type: addPost
+    }
+  }
+  
+export const updateNewPostTextActionCreater = (text) =>{
+    return{ type: updateNewPostText, newText: text }
+  }
 
 
 
