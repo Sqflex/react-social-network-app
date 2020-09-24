@@ -2,11 +2,6 @@ import { act } from "react-dom/test-utils"
 import dialogsReducer from "./dialogsReducer"
 import profileReducer from "./profileReducer"
 
-const addPost = 'ADD-POST'
-const updateNewPostText = 'UPDATE-NEW-POST-TEXT'
-const AddMessage = "ADD-MESSAGE"
-const updateNewMessageText = 'UPDATE-NEW-MESSAGE-TEXT'
-
 let store = {
     _state: {
         profile: {
@@ -63,27 +58,6 @@ let store = {
     }
 
 }
-
-export const addPostActionCreater = () => {
-    return {
-        type: addPost
-    }
-}
-
-export const updateNewPostTextActionCreater = (text) => {
-    return { type: updateNewPostText, newText: text }
-}
-
-export const addMessageActionCreater = () => {
-    return {
-        type: AddMessage
-    }
-}
-
-export const updateNewMessageTextActionCreater = (Mestext) => {
-    return { type: updateNewMessageText, newMessageText: Mestext }
-}
-
 
 
 
