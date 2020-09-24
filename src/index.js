@@ -1,13 +1,14 @@
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from './Redux/state';
+import store from './Redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
 //addPost('SamuraiJS');
 
-export let rerenderEntireTree = (state) =>{ReactDOM.render(
+export let rerenderEntireTree = (state) =>{
+    ReactDOM.render(
     <React.StrictMode>
         <App state={state} dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>,
@@ -20,6 +21,9 @@ rerenderEntireTree(store.getState());
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-store.subscribe(rerenderEntireTree);
+store.subscribe(() =>{
+    let state = store.getState();
+    rerenderEntireTree();
+});
 
 // bind (to learn)

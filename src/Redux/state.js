@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils"
 import dialogsReducer from "./dialogsReducer"
 import profileReducer from "./profileReducer"
 

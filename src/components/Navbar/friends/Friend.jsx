@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Friend.module.css';
-import { NavLink } from 'react-router-dom';
+
 // History API html5
 // Prevent default
 const Friend = (props) =>{

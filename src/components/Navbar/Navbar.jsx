@@ -5,7 +5,7 @@ import Friend from './friends/Friend';
 // History API html5
 // Prevent default
 const Navbar = (props) =>{
-    let friendsElement = props.friends.map (friend => <Friend friendName={friend.friendName} URLimg={friend.URLimg} />)
+    //let friendsElement = props.friends.map (friend => <Friend friendName={friend.friendName} URLimg={friend.URLimg} />)
     return (
         <aside className={styles.navigation}>
             <nav>
@@ -17,9 +17,6 @@ const Navbar = (props) =>{
                 <li><NavLink to="/settings" activeClassName={styles.active}>Settings</NavLink></li>
             </ul>
             </nav>
-            <div className={styles.friends}>
-                {friendsElement}
-            </div>
         </aside>
     )
 }
