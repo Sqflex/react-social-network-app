@@ -1,3 +1,7 @@
+import { act } from "react-dom/test-utils"
+import dialogsReducer from "./dialogsReducer"
+import profileReducer from "./profileReducer"
+
 const addPost = 'ADD-POST'
 const updateNewPostText = 'UPDATE-NEW-POST-TEXT'
 const AddMessage = "ADD-MESSAGE"
@@ -51,31 +55,11 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === addPost) {
-            let newPost = {
-                id: 5,
-                postmessage: this._state.profile.newPostText,
-                likes: 0
 
-            };
+        this._state.profile = profileReducer(this._state.profile, action);
+        this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
 
-            this._state.profile.postsData.push(newPost);
-            this._state.profile.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === updateNewPostText) {
-            this._state.profile.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
-        else if (action.type === AddMessage) {
-            let newMessage = { id: 5, message: this._state.messagesPage.newMessageText };
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        }
-        else if (action.type === updateNewMessageText) {
-            this._state.messagesPage.newMessageText = action.newMessageText;
-            this._callSubscriber(this._state);
-        }
+        this._callSubscriber(this._state);
     }
 
 }
