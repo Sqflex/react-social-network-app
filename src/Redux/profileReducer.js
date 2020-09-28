@@ -4,7 +4,7 @@ const updateNewPostText = 'UPDATE-NEW-POST-TEXT'
 let initialState = {
     postsData: [
         { id: 1, postmessage: 'Hi, im working tonight!', likes: '32' },
-        { id: 2, postmessage: 'My first post ;3', likes: '5' },
+        { id: 2, postmessage: 'My first post ;3', likes: '5' }, 
     ],
     newPostText: 'Samuraijs'
 };

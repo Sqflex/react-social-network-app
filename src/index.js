@@ -23,7 +23,7 @@ serviceWorker.unregister();
 
 store.subscribe(() =>{
     let state = store.getState();
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 });
 
 // bind (to learn)
