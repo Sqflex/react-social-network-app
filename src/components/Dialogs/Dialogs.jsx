@@ -9,14 +9,12 @@ const Dialogs = (props) => {
     let newMessageAdd = React.createRef();
 
     let addMessage = () => {
-        //props.addPost();
-        props.dispatch(addMessageActionCreater());
+        props.addMessage();
     }
 
     let onMessageChange = () => {
         let Mestext = newMessageAdd.current.value;
-        let action = updateNewMessageTextActionCreater(Mestext)
-        props.dispatch(action);
+        props.updateNewMessageText(Mestext);
     }
 
     let dialogsElements = props.dialogs.map(

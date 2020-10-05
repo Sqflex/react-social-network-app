@@ -10,15 +10,13 @@ const MyPosts = (props) => {
 
   let newPostAdd = React.createRef();
 
-  let addPost =()=>{
-    //props.addPost();
-    props.dispatch(addPostActionCreater());
+  let onAddPost =()=>{
+    props.addPost();
   }
 
   let onPostChange = () =>{
     let text = newPostAdd.current.value;
-    let action = updateNewPostTextActionCreater(text)
-    props.dispatch(action);
+    props.updateNewPostText(text);
   }
 
   return (
@@ -32,7 +30,7 @@ const MyPosts = (props) => {
         <h3>My Posts</h3>
         <div><textarea onChange={onPostChange} ref={newPostAdd} value={props.newPostText}/></div>
         <div>
-          <button onClick={ addPost }>Add Post</button>
+          <button onClick={ onAddPost }>Add Post</button>
         </div>
         <div className={s.posts}>
           {postsElements}
