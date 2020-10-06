@@ -4,16 +4,16 @@ import store from './Redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import StoreContext from './StoreContext';
+import {Provider} from 'react-redux'
 
 //addPost('SamuraiJS');
 
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <StoreContext.Provider value = {store}>
+            <Provider store = {store}>
                 <App />
-            </StoreContext.Provider>
+            </Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );
