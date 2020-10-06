@@ -1,19 +1,16 @@
 import React from 'react';
-import StoreContext from '../../StoreContext';
+import { connect } from 'react-redux';
 import Friend from './friends/Friend';
 import Navbar from './Navbar'
 // History API html5
 // Prevent default
-const NavbarContainer = (props) => {
-    return <StoreContext.Consumer>
-        {
-            (store) => {
-                return <Navbar friends={store.getState().friendsSection.friends} />
-            }
 
-        }
-    </StoreContext.Consumer>
-
+let mapStateToProps = (state) => {
+    return {
+        friends: state.friendsSection.friends
+    }
 }
+
+const NavbarContainer = connect(mapStateToProps)(Navbar)
 
 export default NavbarContainer;
