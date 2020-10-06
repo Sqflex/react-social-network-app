@@ -4,16 +4,20 @@ import store from './Redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import StoreContext from './StoreContext';
 
 //addPost('SamuraiJS');
 
-export let rerenderEntireTree = (state) =>{
+export let rerenderEntireTree = (state) => {
     ReactDOM.render(
-    <React.StrictMode>
-        <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
-    </React.StrictMode>,
-    document.getElementById('root')
-);}
+        <React.StrictMode>
+            <StoreContext.Provider value = {store}>
+                <App />
+            </StoreContext.Provider>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
 
 rerenderEntireTree(store.getState());
 // If you want your app to work offline and load faster, you can change
@@ -21,7 +25,7 @@ rerenderEntireTree(store.getState());
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-store.subscribe(() =>{
+store.subscribe(() => {
     let state = store.getState();
     rerenderEntireTree(state);
 });

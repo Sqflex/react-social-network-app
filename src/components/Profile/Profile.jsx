@@ -8,7 +8,7 @@ const Profile = (props) => {
     return (
         <section className>
         <ProfileInfo />
-        <MyPostsContainer store={props.store}/>
+        <MyPostsContainer />
       </section>
     )
 }
