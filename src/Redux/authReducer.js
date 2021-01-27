@@ -1,5 +1,4 @@
 const SET_AUTH_USER_DATA =  'SET_AUTH_USER_DATA'
-const UNFOLLOW = 'UNFOLLOW'
 
 
 let initialState = {
