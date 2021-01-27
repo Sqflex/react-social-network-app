@@ -1,8 +1,23 @@
 .header{
-    grid-area: h;
-    background-color: green;
-    }
-    
-    .header img{
-      width: 80px;
-    }
+  grid-area: h;
+  background-color: green;
+  }
+
+.header img{
+  width: 80px;
+  }
+
+.login_block{
+  float: right;
+}
+
+.login-text{
+  color: white;
+  text-decoration: none;
+  text-decoration-color: wheat;
+}
+
+p{
+  color: white;
+  text-decoration: none;
+}
