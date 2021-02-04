@@ -34,3 +34,9 @@ export const Authorization = () =>{
         response => response.data
     )
 }
+
+export const getProfile = (id = 1) =>{
+    return instance.get(`profile/${id}`).then(
+        response => response.data
+    )
+}
