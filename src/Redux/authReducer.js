@@ -1,5 +1,6 @@
-const SET_AUTH_USER_DATA =  'SET_AUTH_USER_DATA'
+import {Authorization} from '../API/api'
 
+const SET_AUTH_USER_DATA =  'SET_AUTH_USER_DATA'
 
 let initialState = {
     userId: null,
@@ -30,6 +31,15 @@ export const setAuthUserData = (userId, email, login) => ({type: SET_AUTH_USER_D
     email,
     login
 }})
+
+export const AuthorizationThunk = () => (dispatch) =>{
+    Authorization.me().then(data => {
+        if(data.resultCode === 0){
+            let {id, email, login} = data.data;
+            dispatch(setAuthUserData(id, email, login));
+        }
+    });
+}
 
 export default authReducer;
 //DDD - to learn
