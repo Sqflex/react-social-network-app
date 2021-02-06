@@ -3,6 +3,7 @@ import { usersAPI } from '../API/api.js';
 const addPost = 'ADD-POST'
 const updateNewPostText = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
+const GET_USER_PROFILE = 'GET_USER_PROFILE'
 
 let initialState = {
     postsData: [
