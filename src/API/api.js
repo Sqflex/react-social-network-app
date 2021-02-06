@@ -40,3 +40,9 @@ export const Authorization = {
         )
     }
 }
+
+export const getProfile = (id = 1) =>{
+    return instance.get(`profile/${id}`).then(
+        response => response.data
+    )
+}

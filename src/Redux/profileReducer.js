@@ -61,4 +61,5 @@ export const getUserProfile = (userId) => (dispatch) => (
         dispatch(setUserProfile(response.data));
     })
 )
+
 export default profileReducer;
