@@ -13,8 +13,8 @@ const ProfileInfo = (props) => {
                 <img src="https://sun9-15.userapi.com/0isHeMubDs_eDAB28yFIjEEcjT9t_E1Hr8whtQ/Z3TH8GDs2QM.jpg" alt="background-profile"></img>
             </div>
             <div className={s.describtionBlock}>
-                <img src={props.profile.photos.large} />
-                <ProfileStatus status={'Hello, Im in charge now!'}/>
+                <img src={props.profile.photos.large} alt="Аватарка профиля"/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 <div className="info-container">
                     <ul>
                         <li>О себе: {props.profile.aboutMe}</li>

@@ -4,11 +4,10 @@ class ProfileStatus extends React.Component {
 
     state = {
         editMode: false,
+        status: this.props.status,
     }
 
     activateEditMode = () =>{
-        debugger
-        console.log('this:', this);
         this.setState({                     // setState - Асинхронен, поэтому editMode изменится по eventLoop'у, а не сразу.
             editMode: true,
         })
@@ -17,7 +16,15 @@ class ProfileStatus extends React.Component {
     deactivateEditMode = () =>{
         this.setState({
             editMode: false,
-        })
+        });
+        this.props.updateStatus(this.state.status);
+    }
+
+    onStatusChange = (e) =>{
+        this.setState({
+            status: e.currentTarget.value,
+        });
+        
     }
 
     render() {
@@ -25,11 +32,11 @@ class ProfileStatus extends React.Component {
             <div>
                 {!this.state.editMode &&
                     <div>
-                        <span onDoubleClick={this.activateEditMode}>{!this.props.status ? `Our Status` : this.props.status}</span>
+                        <span onDoubleClick={this.activateEditMode}>{!this.props.status ? 'Our status' : this.props.status}</span>
                     </div>}
                 {this.state.editMode &&
                     <div className="statusArea">
-                        <input autoFocus = {true} onBlur= {this.deactivateEditMode}value={this.props.status}></input>
+                        <input autoFocus = {true} onChange={this.onStatusChange} onBlur= {this.deactivateEditMode} value={this.state.status}></input>
                     </div>}
             </div>
         )
