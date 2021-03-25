@@ -5,7 +5,7 @@ const Message = (props) => {
 
     return (
         <section>
-            <div className='mesage'>
+            <div className='message'>
                 <div className={style.message}>{props.message}</div>
             </div>
         </section>
