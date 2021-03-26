@@ -52,11 +52,14 @@ export const Authorization = {
             response => response.data
         )
     },
-    authLogin(email, password,rememberMe) {
+    login(email, password,rememberMe =  false) {
         return instance.post(`/auth/login`, {email,password,rememberMe}).then(
             response => response.data
         )
-    }
+    },
+    logout(){
+        return instance.delete(`/auth/login`);
+    },
 }
 
 

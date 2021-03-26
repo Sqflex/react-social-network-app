@@ -6,7 +6,6 @@ let initialState = {
     userId: null,
     email: null,
     login: null,
-    isFetching: false,
     isAuth: false
 };
 
@@ -15,8 +14,7 @@ const authReducer = (state = initialState, action) => {
         case SET_AUTH_USER_DATA: {
             return {
                 ...state,
-                ...action.data,
-                isAuth: true
+                ...action.payload,
             }
         }
         /*case TOGGLE_IS_FETCHING:{
@@ -26,17 +24,34 @@ const authReducer = (state = initialState, action) => {
             return state;
     }
 }
-export const setAuthUserData = (userId, email, login) => ({type: SET_AUTH_USER_DATA, data: {
+export const setAuthUserData = (userId, email, login, isAuth) => ({type: SET_AUTH_USER_DATA, payload: {
     userId,
     email,
-    login
+    login,
+    isAuth
 }})
 
-export const AuthorizationThunk = () => (dispatch) =>{
+export const AuthorizationMeThunk = () => (dispatch) =>{
     Authorization.me().then(data => {
         if(data.resultCode === 0){
             let {id, email, login} = data.data;
-            dispatch(setAuthUserData(id, email, login));
+            dispatch(setAuthUserData(id, email, login, true));
+        }
+    });
+}
+
+export const LoginThunk = (email,password,rememberMe) => (dispatch) =>{
+    Authorization.login(email,password,rememberMe).then(data => {
+        if(data.resultCode === 0){
+            dispatch(AuthorizationMeThunk());
+        }
+    });
+}
+
+export const LogoutThunk = () => (dispatch) =>{
+    Authorization.logout().then(data => {
+        if(data.resultCode === 0){
+            dispatch(setAuthUserData(null, null, null,false));
         }
     });
 }
