@@ -1,4 +1,5 @@
-import {Authorization} from '../API/api'
+import {Authorization} from '../API/api';
+import {stopSubmit} from "redux-form";
 
 const SET_AUTH_USER_DATA =  'SET_AUTH_USER_DATA'
 
@@ -44,6 +45,10 @@ export const LoginThunk = (email,password,rememberMe) => (dispatch) =>{
     Authorization.login(email,password,rememberMe).then(data => {
         if(data.resultCode === 0){
             dispatch(AuthorizationMeThunk());
+        }
+        else{
+            let message = data.messages.length > 0 ? data.messages[0] : "Unknown mistake";
+            dispatch(stopSubmit("login", {_error: message}));
         }
     });
 }
