@@ -14,7 +14,7 @@ const authReducer = (state = initialState, action) => {
         case SET_AUTH_USER_DATA: {
             return {
                 ...state,
-                ...action.payload,
+                ...action.payload
             }
         }
         /*case TOGGLE_IS_FETCHING:{
