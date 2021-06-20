@@ -8,7 +8,7 @@ export const getAllUsersSelector = (state) =>{
     return getAllUsers(state).filter(u => true);
 }
 
-export const getAllUsersSuperSelector = createSelector(getAllUsers, getIsFetching, (users) => {
+export const getAllUsersSuperSelector = createSelector(getAllUsers, (users) => {
     return users.filter( u => true);
 })
 
